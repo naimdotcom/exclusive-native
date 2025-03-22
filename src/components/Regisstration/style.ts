@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {color} from '../../styles/global';
 
 export const RegistrationStyles = StyleSheet.create({
   container: {
@@ -9,11 +10,11 @@ export const RegistrationStyles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#EEEEEE',
+    color: color.light,
     padding: 10,
   },
   text: {
-    fontSize: 16,
+    fontSize: 18,
     color: '#EEEEEE',
     padding: 10,
   },
@@ -25,6 +26,7 @@ export const RegistrationStyles = StyleSheet.create({
     marginBottom: 10,
     marginHorizontal: 10,
     color: '#EEEEEE',
+    fontSize: 16,
   },
   image: {
     width: '100%',
@@ -53,5 +55,7 @@ export const RegistrationStyles = StyleSheet.create({
 
     flexDirection: 'column',
     color: '#EEEEEE',
+    paddingHorizontal: 4,
+    paddingVertical: 10,
   },
 });

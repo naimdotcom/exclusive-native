@@ -16,7 +16,6 @@ const App = () => {
             component={Registration}
             options={{title: '', headerShown: false}}
           />
-          <Stack.Screen name="Registration" component={Registration} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

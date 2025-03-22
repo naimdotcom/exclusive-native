@@ -29,8 +29,7 @@ export const cf = (
 };
 
 export const font = {
-  primary: 'Inter_400Regular',
-  secondary: 'Inter_700Bold',
+  Inter: 'Inter',
 };
 
 export const spacing = {

@@ -16,13 +16,20 @@ const Registration = () => {
               ...RegistrationStyles.image,
             }}>
             <View style={RegistrationStyles.overlay}></View>
-            {/* fit content start */}
-            <View style={{flex: 1, justifyContent: 'flex-start'}} />
 
             {/* content card */}
             <View style={RegistrationStyles.card}>
               <Text style={RegistrationStyles.title}>Create an Account</Text>
 
+              <View>
+                <Text style={RegistrationStyles.text}>Enter your Name</Text>
+                <TextInput
+                  placeholder="Name"
+                  keyboardType="default"
+                  style={cf(RegistrationStyles.textInput)}
+                  placeholderTextColor={'#AAA'}
+                />
+              </View>
               <View>
                 <Text style={RegistrationStyles.text}>
                   Enter your email address
@@ -35,8 +42,6 @@ const Registration = () => {
                 />
               </View>
             </View>
-            {/* fit content end */}
-            <View style={{flex: 1, justifyContent: 'flex-end'}} />
           </ImageBackground>
         </View>
       </SafeAreaView>
