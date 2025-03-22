@@ -25,7 +25,7 @@ const Registration = () => {
                 <Text style={RegistrationStyles.text}>Enter your Name</Text>
                 <TextInput
                   placeholder="Name"
-                  keyboardType="ascii-capable"
+                  keyboardType="default"
                   style={cf(RegistrationStyles.textInput)}
                   placeholderTextColor={'#AAA'}
                 />
@@ -44,10 +44,11 @@ const Registration = () => {
               <View>
                 <Text style={RegistrationStyles.text}>Enter Password</Text>
                 <TextInput
-                  placeholder="Email"
-                  keyboardType="visible-password"
+                  placeholder="Password"
+                  keyboardType="default"
                   style={cf(RegistrationStyles.textInput)}
                   placeholderTextColor={'#AAA'}
+                  secureTextEntry={true}
                 />
               </View>
             </View>
