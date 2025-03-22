@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {color} from '../../styles/global';
+import {color, font} from '../../styles/global';
 
 export const RegistrationStyles = StyleSheet.create({
   container: {
@@ -14,6 +14,7 @@ export const RegistrationStyles = StyleSheet.create({
     padding: 10,
   },
   text: {
+    fontFamily: font.InterLight,
     fontSize: 18,
     color: '#EEEEEE',
     padding: 10,

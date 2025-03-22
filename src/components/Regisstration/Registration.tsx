@@ -25,7 +25,7 @@ const Registration = () => {
                 <Text style={RegistrationStyles.text}>Enter your Name</Text>
                 <TextInput
                   placeholder="Name"
-                  keyboardType="default"
+                  keyboardType="ascii-capable"
                   style={cf(RegistrationStyles.textInput)}
                   placeholderTextColor={'#AAA'}
                 />
@@ -37,6 +37,15 @@ const Registration = () => {
                 <TextInput
                   placeholder="Email"
                   keyboardType="email-address"
+                  style={cf(RegistrationStyles.textInput)}
+                  placeholderTextColor={'#AAA'}
+                />
+              </View>
+              <View>
+                <Text style={RegistrationStyles.text}>Enter Password</Text>
+                <TextInput
+                  placeholder="Email"
+                  keyboardType="visible-password"
                   style={cf(RegistrationStyles.textInput)}
                   placeholderTextColor={'#AAA'}
                 />

@@ -29,9 +29,15 @@ export const cf = (
 };
 
 export const font = {
-  Inter: 'Inter',
+  Inter: 'Inter-font',
+  Fira: 'FiraCode-VariableFont_wght',
+  InterThin: 'Inter_18pt-Thin',
+  InterLight: 'Inter_18pt-Light',
+  InterRegular: 'Inter_18pt-Regular',
+  InterMedium: 'Inter_18pt-Medium',
+  InterBold: 'Inter_18pt-Bold',
 };
-
+// src/assets/fonts/Inter.ttf
 export const spacing = {
   s: 8,
   m: 16,
