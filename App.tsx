@@ -1,6 +1,7 @@
 import {
   Alert,
   Button,
+  FlatList,
   Image,
   SafeAreaView,
   StyleSheet,
@@ -12,22 +13,46 @@ import React from 'react';
 const i = require('./src/assets/Asset4.webp');
 
 const App = () => {
+  const data = [
+    {
+      id: 1,
+      name: 'John',
+    },
+    {
+      id: 2,
+      name: 'Jane',
+    },
+    {
+      id: 3,
+      name: 'Bob',
+    },
+  ];
+
   const handleBtn = () => {
     Alert.alert('Button Clicked');
+    console.log('Button Clicked');
   };
   return (
     <SafeAreaView style={styles.container}>
       <View
         style={{
           paddingLeft: 10,
+          flex: 1,
+          flexDirection: 'column',
+          columnGap: 10,
         }}>
         <Text style={styles.text}>App</Text>
         <TouchableOpacity style={styles.btn} onPress={handleBtn}>
           <Text style={styles.buttonText}>Click Me</Text>
         </TouchableOpacity>
+        <FlatList
+          data={data}
+          renderItem={({item}) => <Text style={styles.text}>{item.name}</Text>}
+          keyExtractor={item => String(item.id)}
+        />
       </View>
 
-      <View>
+      <View style={{flex: 1}}>
         <Image source={i} style={styles.image} />
       </View>
     </SafeAreaView>
@@ -58,7 +83,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 10,
-    alignSelf: 'center',
+    alignSelf: 'flex-start',
   },
   buttonText: {
     color: 'black',
