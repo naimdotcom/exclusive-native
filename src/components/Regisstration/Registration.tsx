@@ -1,13 +1,43 @@
-import {Text, View} from 'react-native';
+import {ImageBackground, Text, TextInput, View} from 'react-native';
 import React from 'react';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
-
+import {RegistrationStyles} from './style';
+import {cf} from '../../styles/global';
+const bgImage = require('../../assets/someImage.jpg');
 const Registration = () => {
   return (
     <>
       <SafeAreaView>
         <View>
-          <Text>Registration</Text>
+          <ImageBackground
+            source={bgImage}
+            resizeMode="cover"
+            style={{
+              ...RegistrationStyles.image,
+            }}>
+            <View style={RegistrationStyles.overlay}></View>
+            {/* fit content start */}
+            <View style={{flex: 1, justifyContent: 'flex-start'}} />
+
+            {/* content card */}
+            <View style={RegistrationStyles.card}>
+              <Text style={RegistrationStyles.title}>Create an Account</Text>
+
+              <View>
+                <Text style={RegistrationStyles.text}>
+                  Enter your email address
+                </Text>
+                <TextInput
+                  placeholder="Email"
+                  keyboardType="email-address"
+                  style={cf(RegistrationStyles.textInput)}
+                  placeholderTextColor={'#AAA'}
+                />
+              </View>
+            </View>
+            {/* fit content end */}
+            <View style={{flex: 1, justifyContent: 'flex-end'}} />
+          </ImageBackground>
         </View>
       </SafeAreaView>
     </>
