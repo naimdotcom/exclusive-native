@@ -1,91 +1,55 @@
-import {
-  Alert,
-  Button,
-  FlatList,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import React from 'react';
-const i = require('./src/assets/Asset4.webp');
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+
+import Registration from './src/components/Regisstration/Registration';
 
 const App = () => {
-  const data = [
-    {
-      id: 1,
-      name: 'John',
-    },
-    {
-      id: 2,
-      name: 'Jane',
-    },
-    {
-      id: 3,
-      name: 'Bob',
-    },
-  ];
+  const Stack = createNativeStackNavigator();
 
-  const handleBtn = () => {
-    Alert.alert('Button Clicked');
-    console.log('Button Clicked');
-  };
   return (
-    <SafeAreaView style={styles.container}>
-      <View
-        style={{
-          paddingLeft: 10,
-          flex: 1,
-          flexDirection: 'column',
-          columnGap: 10,
-        }}>
-        <Text style={styles.text}>App</Text>
-        <TouchableOpacity style={styles.btn} onPress={handleBtn}>
-          <Text style={styles.buttonText}>Click Me</Text>
-        </TouchableOpacity>
-        <FlatList
-          data={data}
-          renderItem={({item}) => <Text style={styles.text}>{item.name}</Text>}
-          keyExtractor={item => String(item.id)}
-        />
-      </View>
-
-      <View style={{flex: 1}}>
-        <Image source={i} style={styles.image} />
-      </View>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={Registration}
+            options={{title: '', headerShown: false}}
+          />
+          <Stack.Screen name="Registration" component={Registration} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 };
 
 export default App;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'rgba(34, 34, 34, 1)',
-    color: 'white',
-  },
-  text: {
-    color: 'white',
-    fontSize: 30,
-  },
-  image: {
-    width: '100%',
-    height: 200,
-    resizeMode: 'cover',
-    padding: 10,
-  },
-  btn: {
-    backgroundColor: 'white',
-    color: 'white',
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    borderRadius: 10,
-    alignSelf: 'flex-start',
-  },
-  buttonText: {
-    color: 'black',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: 'rgba(34, 34, 34, 1)',
+//     color: 'white',
+//   },
+//   text: {
+//     color: 'white',
+//     fontSize: 30,
+//   },
+//   image: {
+//     width: '100%',
+//     height: 200,
+//     resizeMode: 'cover',
+//     padding: 10,
+//   },
+//   btn: {
+//     backgroundColor: 'white',
+//     color: 'white',
+//     paddingHorizontal: 10,
+//     paddingVertical: 5,
+//     borderRadius: 10,
+//     alignSelf: 'flex-start',
+//   },
+//   buttonText: {
+//     color: 'black',
+//   },
+// });
