@@ -7,7 +7,7 @@ const bgImage = require('../../assets/someImage.jpg');
 const Registration = () => {
   return (
     <>
-      <SafeAreaView>
+      <>
         <View>
           <ImageBackground
             source={bgImage}
@@ -54,7 +54,7 @@ const Registration = () => {
             </View>
           </ImageBackground>
         </View>
-      </SafeAreaView>
+      </>
     </>
   );
 };

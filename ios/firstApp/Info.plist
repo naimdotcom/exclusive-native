@@ -49,7 +49,6 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>FiraCode-VariableFont_wght.ttf</string>
 		<string>Inter-font.ttf</string>
 		<string>Inter_18pt-Bold.ttf</string>
 		<string>Inter_18pt-Light.ttf</string>
@@ -57,6 +56,11 @@
 		<string>Inter_18pt-Regular.ttf</string>
 		<string>Inter_18pt-SemiBold.ttf</string>
 		<string>Inter_18pt-Thin.ttf</string>
+		<string>FiraCode-Bold.ttf</string>
+		<string>FiraCode-Light.ttf</string>
+		<string>FiraCode-Medium.ttf</string>
+		<string>FiraCode-Regular.ttf</string>
+		<string>FiraCode-SemiBold.ttf</string>
 	</array>
 </dict>
 </plist>

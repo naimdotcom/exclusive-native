@@ -8,13 +8,14 @@ export const RegistrationStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
+    fontFamily: font.FiraCodeBold,
     fontSize: 20,
     fontWeight: 'bold',
     color: color.light,
     padding: 10,
   },
   text: {
-    fontFamily: font.InterLight,
+    fontFamily: 'Inter_18pt-Regular',
     fontSize: 18,
     color: '#EEEEEE',
     padding: 10,
