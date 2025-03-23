@@ -10,7 +10,6 @@ import {
   View,
 } from 'react-native';
 import React, {useState} from 'react';
-import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import {RegistrationStyles} from './style';
 import {cf} from '../../styles/global';
 import PressableBtn from '../ui/PressableBtn';
@@ -98,7 +97,7 @@ const Registration = () => {
                   </View>
 
                   <View>
-                    <PressableBtn children={'Sign Up'} />
+                    <PressableBtn children={'Sign Up'} btnStyle={{}} />
                   </View>
                 </View>
               </TouchableWithoutFeedback>

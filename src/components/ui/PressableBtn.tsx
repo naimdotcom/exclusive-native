@@ -21,7 +21,6 @@ const PressableBtn = ({
   textStyle,
   onPressIn,
   onPressOut,
-
   ...props
 }: props) => {
   const [focused, setFocused] = useState(false);
@@ -71,6 +70,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   pressed: {
-    opacity: 0.7,
+    opacity: 0.9,
   },
 });
