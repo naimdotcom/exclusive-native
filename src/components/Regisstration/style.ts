@@ -12,7 +12,8 @@ export const RegistrationStyles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: color.light,
-    padding: 10,
+    paddingBottom: 10,
+    paddingHorizontal: 10,
   },
   text: {
     fontFamily: 'Inter_18pt-Regular',
@@ -54,10 +55,10 @@ export const RegistrationStyles = StyleSheet.create({
     // height: 'fit-content',
     borderRadius: 10,
     justifyContent: 'flex-start',
-
+    opacity: 0.8,
     flexDirection: 'column',
     color: '#EEEEEE',
     paddingHorizontal: 4,
-    paddingVertical: 10,
+    paddingVertical: 20,
   },
 });
