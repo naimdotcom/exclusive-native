@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
   },
   focus: {
     backgroundColor: color.light,
+    borderWidth: 1,
   },
   pressed: {
     opacity: 0.7,
