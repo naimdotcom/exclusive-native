@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import Registration from './src/components/Regisstration/Registration';
+import Animation from './src/components/test/Animation';
 
 const App = () => {
   const Stack = createNativeStackNavigator();

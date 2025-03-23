@@ -1,4 +1,5 @@
 import {
+  Alert,
   ImageBackground,
   Keyboard,
   KeyboardAvoidingView,
@@ -27,12 +28,41 @@ const Registration = () => {
     email: '',
     password: '',
   });
+  const [requiredRes, setRequiredRes] = useState<signup>({
+    name: '.',
+    email: '.',
+    password: '.',
+  });
 
   const handlChangeText = (e: any, id: string) => {
     setSignupInfo({
       ...signupInfo,
       [id]: e,
     });
+  };
+
+  const handleSubmit = () => {
+    if (signupInfo.name === '') {
+      setRequiredRes({
+        ...requiredRes,
+        name: 'Name is Required',
+      });
+      return;
+    }
+    if (signupInfo.email === '') {
+      return setRequiredRes({
+        ...requiredRes,
+        email: 'Email is Required',
+      });
+    }
+
+    if (signupInfo.password === '') {
+      return setRequiredRes({
+        ...requiredRes,
+        password: 'Password is Required',
+      });
+    }
+    console.log(signupInfo);
   };
 
   return (
@@ -69,6 +99,9 @@ const Registration = () => {
                       placeholderTextColor={'#AAA'}
                       onChangeText={e => handlChangeText(e, 'name')}
                     />
+                    {requiredRes.name && signupInfo.name === '' ? (
+                      <Text style={{color: 'red'}}>{requiredRes.name}</Text>
+                    ) : null}
                   </View>
 
                   <View>
@@ -97,7 +130,11 @@ const Registration = () => {
                   </View>
 
                   <View>
-                    <PressableBtn children={'Sign Up'} btnStyle={{}} />
+                    <PressableBtn
+                      children={'Sign Up'}
+                      onPress={handleSubmit}
+                      btnStyle={{}}
+                    />
                   </View>
                 </View>
               </TouchableWithoutFeedback>
