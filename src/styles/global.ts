@@ -8,7 +8,19 @@ import {
 
 // Define a generic style type that works with View, Text, and Image styles
 type RNStyle = StyleProp<ViewStyle | TextStyle | ImageStyle>;
-type NamedStyles<T> = {[P in keyof T]: ViewStyle | TextStyle | ImageStyle};
+
+/**
+ * Composes multiple styles together. This is a convenience wrapper around
+ * `StyleSheet.compose` and `StyleSheet.flatten`. It removes any undefined/null
+ * values from the input styles array, iteratively applies `StyleSheet.compose`
+ * to the remaining styles, and then flattens the result with
+ * `StyleSheet.flatten`.
+ *
+ * @param styles One or more styles to compose. Any undefined/null values will
+ * be ignored.
+ *
+ * @returns The composed style.
+ */
 export const cf = (
   ...styles: (RNStyle | null | undefined)[]
 ): ViewStyle | TextStyle | ImageStyle => {
@@ -26,10 +38,6 @@ export const cf = (
     | ViewStyle
     | TextStyle
     | ImageStyle;
-};
-
-export const dynamicStyle = <T extends NamedStyles<T>>(style: T) => {
-  return StyleSheet.create<T>(style);
 };
 
 export const font = {
