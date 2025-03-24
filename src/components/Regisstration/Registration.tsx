@@ -1,5 +1,4 @@
 import {
-  Alert,
   ImageBackground,
   Keyboard,
   KeyboardAvoidingView,
@@ -22,16 +21,22 @@ export type signup = {
   password: string;
 };
 
+export interface requiredRes {
+  name: boolean | string;
+  email: boolean | string;
+  password: boolean | string;
+}
+
 const Registration = () => {
   const [signupInfo, setSignupInfo] = useState<signup>({
     name: '',
     email: '',
     password: '',
   });
-  const [requiredRes, setRequiredRes] = useState<signup>({
-    name: '.',
-    email: '.',
-    password: '.',
+  const [requiredRes, setRequiredRes] = useState<requiredRes>({
+    name: false,
+    email: false,
+    password: false,
   });
 
   const handlChangeText = (e: any, id: string) => {
@@ -62,6 +67,11 @@ const Registration = () => {
         password: 'Password is Required',
       });
     }
+    setRequiredRes({
+      name: false,
+      email: false,
+      password: false,
+    });
     console.log(signupInfo);
   };
 
@@ -75,9 +85,6 @@ const Registration = () => {
             ...RegistrationStyles.image,
           }}>
           <View style={RegistrationStyles.overlay}></View>
-
-          {/* content card */}
-          {/* Keyboard Avoiding + ScrollView */}
           <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             style={{flex: 1}}>
@@ -115,6 +122,9 @@ const Registration = () => {
                       placeholderTextColor={'#AAA'}
                       onChangeText={e => handlChangeText(e, 'email')}
                     />
+                    {requiredRes.email && signupInfo.email === '' ? (
+                      <Text style={{color: 'red'}}>{requiredRes.email}</Text>
+                    ) : null}
                   </View>
 
                   <View>
@@ -127,6 +137,9 @@ const Registration = () => {
                       secureTextEntry={true}
                       onChangeText={e => handlChangeText(e, 'password')}
                     />
+                    {requiredRes.password && signupInfo.password === '' ? (
+                      <Text style={{color: 'red'}}>{requiredRes.password}</Text>
+                    ) : null}
                   </View>
 
                   <View>

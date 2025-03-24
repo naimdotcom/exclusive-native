@@ -17,6 +17,7 @@ const App = () => {
             component={Registration}
             options={{title: '', headerShown: false}}
           />
+          <Stack.Screen name="Snimation" component={Animation} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

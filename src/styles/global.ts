@@ -8,7 +8,7 @@ import {
 
 // Define a generic style type that works with View, Text, and Image styles
 type RNStyle = StyleProp<ViewStyle | TextStyle | ImageStyle>;
-
+type NamedStyles<T> = {[P in keyof T]: ViewStyle | TextStyle | ImageStyle};
 export const cf = (
   ...styles: (RNStyle | null | undefined)[]
 ): ViewStyle | TextStyle | ImageStyle => {
@@ -26,6 +26,10 @@ export const cf = (
     | ViewStyle
     | TextStyle
     | ImageStyle;
+};
+
+export const dynamicStyle = <T extends NamedStyles<T>>(style: T) => {
+  return StyleSheet.create<T>(style);
 };
 
 export const font = {
