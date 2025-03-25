@@ -5,6 +5,12 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import Registration from './src/components/Regisstration/Registration';
 import Animation from './src/components/test/Animation';
 
+export type RootStackParamList = {
+  Home: undefined;
+  animation: undefined;
+  Login: undefined;
+};
+
 const App = () => {
   const Stack = createNativeStackNavigator();
 
@@ -17,7 +23,11 @@ const App = () => {
             component={Registration}
             options={{title: '', headerShown: false}}
           />
-          <Stack.Screen name="Snimation" component={Animation} />
+          <Stack.Screen
+            name="Login"
+            component={Animation}
+            options={{title: 'Login'}}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

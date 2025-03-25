@@ -13,6 +13,10 @@ import React, {useState} from 'react';
 import {RegistrationStyles} from './style';
 import {cf} from '../../styles/global';
 import PressableBtn from '../ui/PressableBtn';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../../App';
+
 const signup = require('../../../assets/Images/signup.jpg');
 
 export type signup = {
@@ -38,6 +42,8 @@ const Registration = () => {
     email: false,
     password: false,
   });
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   const handlChangeText = (e: any, id: string) => {
     setSignupInfo({
@@ -147,6 +153,14 @@ const Registration = () => {
                       children={'Sign Up'}
                       onPress={handleSubmit}
                       btnStyle={{}}
+                    />
+                  </View>
+                  <View>
+                    <PressableBtn
+                      children={'Go to Login'}
+                      onPress={() => {
+                        navigation.navigate('Login');
+                      }}
                     />
                   </View>
                 </View>
