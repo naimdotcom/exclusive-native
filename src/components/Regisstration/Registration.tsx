@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import {RegistrationStyles} from './style';
-import {cf} from '../../styles/global';
+import {cf, color, size, spacing} from '../../styles/global';
 import PressableBtn from '../ui/PressableBtn';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
@@ -156,12 +156,24 @@ const Registration = () => {
                     />
                   </View>
                   <View>
-                    <PressableBtn
-                      children={'Go to Login'}
-                      onPress={() => {
-                        navigation.navigate('Login');
-                      }}
-                    />
+                    <Text
+                      style={{
+                        textAlign: 'center',
+                        marginTop: spacing['1.5'],
+                        color: color.light,
+                        fontSize: size.xs,
+                      }}>
+                      Already have an account{' '}
+                      <Text
+                        style={{
+                          color: color.accent,
+                          fontSize: size.xs,
+                          textDecorationLine: 'underline',
+                        }}
+                        onPress={() => navigation.navigate('Login')}>
+                        Login
+                      </Text>
+                    </Text>
                   </View>
                 </View>
               </TouchableWithoutFeedback>
